@@ -1,0 +1,1 @@
+MP_REGISTER_MODULE(MP_QSTR_ussl, mp_module_ussl);

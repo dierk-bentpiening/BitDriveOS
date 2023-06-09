@@ -1,0 +1,3 @@
+/Users/dbpiening/git/BitDriveOS/ports/rp2/build-PICO_W/pioasm/CMakeFiles/pioasm.dir
+/Users/dbpiening/git/BitDriveOS/ports/rp2/build-PICO_W/pioasm/CMakeFiles/edit_cache.dir
+/Users/dbpiening/git/BitDriveOS/ports/rp2/build-PICO_W/pioasm/CMakeFiles/rebuild_cache.dir
