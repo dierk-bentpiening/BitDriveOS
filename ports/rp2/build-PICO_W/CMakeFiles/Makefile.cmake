@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/micropython.cmake"
   "/Users/dbpiening/git/BitDriveOS/extmod/extmod.cmake"
   "/Users/dbpiening/git/BitDriveOS/lib/pico-sdk/CMakeLists.txt"
   "/Users/dbpiening/git/BitDriveOS/lib/pico-sdk/cmake/Platform/PICO.cmake"

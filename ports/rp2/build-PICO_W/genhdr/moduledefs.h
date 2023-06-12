@@ -32,6 +32,10 @@ extern const struct _mp_obj_module_t mp_module_cmath;
 #undef MODULE_DEF_MP_QSTR_CMATH
 #define MODULE_DEF_MP_QSTR_CMATH { MP_ROM_QSTR(MP_QSTR_cmath), MP_ROM_PTR(&mp_module_cmath) },
 
+extern const struct _mp_obj_module_t memmon_user_cmodule;
+#undef MODULE_DEF_MP_QSTR_CMEMMON
+#define MODULE_DEF_MP_QSTR_CMEMMON { MP_ROM_QSTR(MP_QSTR_cmemmon), MP_ROM_PTR(&memmon_user_cmodule) },
+
 extern const struct _mp_obj_module_t mp_module_framebuf;
 #undef MODULE_DEF_MP_QSTR_FRAMEBUF
 #define MODULE_DEF_MP_QSTR_FRAMEBUF { MP_ROM_QSTR(MP_QSTR_framebuf), MP_ROM_PTR(&mp_module_framebuf) },
@@ -148,6 +152,7 @@ extern const struct _mp_obj_module_t mp_module_uzlib;
 #define MICROPY_REGISTERED_MODULES \
     MODULE_DEF_MP_QSTR_BUILTINS \
     MODULE_DEF_MP_QSTR_CMATH \
+    MODULE_DEF_MP_QSTR_CMEMMON \
     MODULE_DEF_MP_QSTR_FRAMEBUF \
     MODULE_DEF_MP_QSTR_GC \
     MODULE_DEF_MP_QSTR_LWIP \

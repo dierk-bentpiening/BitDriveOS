@@ -15,11 +15,11 @@ a7e1c6b16c57a91998612dfe5b4364c3 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-pat
 2e7c771d820797c7b751fe746a8dbb44 genhdr/moduledefs.h
 427f3b583d9a2ed086954ca0c00a818c genhdr/moduledefs.split
 6b24a8987972a04e8dc3a2998f95e0d8 genhdr/pins.h
-c4235260331e6ca84bc6525fc67ba169 genhdr/qstr.i.last
+9ef8e521f61156e372d60c48be6fadc5 genhdr/qstr.i.last
 e9b782e125784799359dc8ffeda5e0da genhdr/qstr.split
 5567a1cba338fb0d6c5f93f609a0eae1 genhdr/qstrdefs.collected.h
 23d4ba0f6dfb1cb28f6ed61d80e017ec genhdr/qstrdefs.generated.h
-fcd2965dc110d8975c16445d2001c910 genhdr/qstrdefs.preprocessed.h
+6b0fbd8e354987767fe81b5db00782ce genhdr/qstrdefs.preprocessed.h
 52bf0e3c1709ab734f91bd58af35f2ec genhdr/root_pointers.collected
 2f796ea9dcb3bdd374e965eab7dd8631 genhdr/root_pointers.h
 9ed1a958a6ee26108ded8e85f2090c94 genhdr/root_pointers.split

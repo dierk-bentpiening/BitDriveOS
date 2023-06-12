@@ -104,6 +104,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/Users/dbpiening/git/BitDriveOS"
   "/Users/dbpiening/git/BitDriveOS/lib/mbedtls/include"
   "/Users/dbpiening/git/BitDriveOS/lib/lwip/src/include"
+  "/Users/dbpiening/git/BitDriveOS/bdosmod/memmon"
   "/Users/dbpiening/git/BitDriveOS/ports/rp2/boards/PICO_W"
   "/Users/dbpiening/git/BitDriveOS/ports/rp2"
   "."
@@ -170,6 +171,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c" "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.obj" "gcc" "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.obj.d"
   "/Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.c" "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.c.obj" "gcc" "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.c.obj.d"
   "/Users/dbpiening/git/BitDriveOS/drivers/dht/dht.c" "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/drivers/dht/dht.c.obj" "gcc" "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/drivers/dht/dht.c.obj.d"
   "/Users/dbpiening/git/BitDriveOS/extmod/machine_bitstream.c" "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/extmod/machine_bitstream.c.obj" "gcc" "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/extmod/machine_bitstream.c.obj.d"

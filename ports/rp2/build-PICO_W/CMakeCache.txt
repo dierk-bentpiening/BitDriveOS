@@ -308,6 +308,9 @@ PICO_STDIO_UART:BOOL=ON
 //Globablly enable stdio USB
 PICO_STDIO_USB:BOOL=OFF
 
+//No help, variable specified on the command line.
+USER_C_MODULES:UNINITIALIZED=../../bdosmod/memmon/micropython.cmake
+
 //Value Computed by CMake
 firmware_BINARY_DIR:STATIC=/Users/dbpiening/git/BitDriveOS/ports/rp2/build-PICO_W
 

@@ -4,6 +4,7 @@ from utime import sleep, sleep_ms
 from driver.display.lcd_i2c import LCD
 from machine import SoftI2C,
 from math import log2, pow
+from random import randint
 
 I2C_ADDR = 0x27
 NUM_ROWS = 4
@@ -21,9 +22,8 @@ class SoundSubSystem():
         self.paudio_channel_1 = PWM(Pin(8))
         self.paudio_channel_2 = PWM(Pin(7))
         self.paudio_channel_3 = PWM(Pin(6))
-        self.paudio_channel_4 = PWM(Pin(20))
-        self.paudio_channel_5 = PWM(Pin(21))
-        self._channels = [self.paudio_channel_0, self.paudio_channel_1, self.paudio_channel_2, self.paudio_channel_3, self.paudio_channel_4, self.paudio_channel_5]
+        self.paudio_channel_4 = PWM(Pin(21))
+        self._channels = [self.paudio_channel_0, self.paudio_channel_1, self.paudio_channel_2, self.paudio_channel_3, self.paudio_channel_4]
         self.stop_all()
 
         self.tones = {
@@ -159,13 +159,13 @@ class SoundSubSystem():
             chanel.duty_u16(0)
     def play_sample(self, notes, temp):
         self.paudio_channel_0.freq(10512);
-        self.paudio_channel_0.duty_u16(1000);
+        self.paudio_channel_0.duty_u16(10512);
         self.paudio_channel_1.freq(100);
-        self.paudio_channel_1.duty_u16(1000);
+        self.paudio_channel_1.duty_u16(10512);
         self.paudio_channel_2.freq(1523);
-        self.paudio_channel_2.duty_u16(1000);
+        self.paudio_channel_2.duty_u16(10512);
         self.paudio_channel_3.freq(131);
-        self.paudio_channel_3.duty_u16(1000);
+        self.paudio_channel_3.duty_u16(10512);
         tempo = 1.0
         for tone in notes:
             self.lcd.set_cursor(col=0, row=1);
@@ -215,48 +215,59 @@ class SoundSubSystem():
 
     def play_note(self, note, channel, duty):
         if channel == "a0":
+            self.paudio_channel_4.duty_u16(round(self._duty_cycle(duty + 20)))
+            self.paudio_channel_4.freq(round(self._pitch(note + 20)))
             self.paudio_channel_0.freq(round(self._pitch(note)))
             self.paudio_channel_0.duty_u16(self._duty_cycle(duty))
+            self.paudio_channel_4.duty_u16(round(self._duty_cycle(duty - 15)))
+            self.paudio_channel_4.freq(round(self._pitch(note - 40)))
+
         elif channel == "a1":
+            self.paudio_channel_4.duty_u16(round(self._duty_cycle(duty + 20)))
+            self.paudio_channel_4.freq(round(self._pitch(note + 20)))
             self.paudio_channel_1.freq(round(self._pitch(note)))
             self.paudio_channel_1.duty_u16(self._duty_cycle(duty))
+            self.paudio_channel_4.freq(round(self._pitch(note - 40)))
+            self.paudio_channel_4.duty_u16(round(self._duty_cycle(duty - 15)))
+
         elif channel == "b0":
+            self.paudio_channel_4.duty_u16(round(self._duty_cycle(duty + 20)))
+            self.paudio_channel_4.freq(round(self._pitch(note + 20)))
             self.paudio_channel_2.freq(round(self._pitch(note)))
             self.paudio_channel_2.duty_u16(self._duty_cycle(duty))
+            self.paudio_channel_4.freq(round(self._pitch(note - 40)))
+            self.paudio_channel_4.duty_u16(round(self._duty_cycle(duty - 15)))
+
         elif channel == "b1":
+            self.paudio_channel_4.duty_u16(round(self._duty_cycle(duty + 20)))
+            self.paudio_channel_4.freq(round(self._pitch(note + 20)))
             self.paudio_channel_3.freq(round(self._pitch(note)))
             self.paudio_channel_3.duty_u16(self._duty_cycle(duty))
-        elif channel == "c0":
-            self.paudio_channel_4.freq(round(self._pitch(note)))
-            self.paudio_channel_4.duty_u16(self._duty_cycle(duty))
-        elif channel == "c1":
-            self.paudio_channel_5.freq(round(self._pitch(note)))
-            self.paudio_channel_5.duty_u16(self._duty_cycle(duty))
+            self.paudio_channel_4.freq(round(self._pitch(note - 40)))
+            self.paudio_channel_4.duty_u16(round(self._duty_cycle(duty - 15)))
 
     def stop_channel(self, channel):
         if channel == "a0":
             self.paudio_channel_0.duty_u16(0)
+            self.paudio_channel_4.duty_u16(self._duty_cycle(0))
         elif channel == "a1":
             self.paudio_channel_1.duty_u16(0)
+            self.paudio_channel_4.duty_u16(self._duty_cycle(0))
         elif channel == "b0":
             self.paudio_channel_2.duty_u16(0)
+            self.paudio_channel_4.duty_u16(self._duty_cycle(0))
         elif channel == "b1":
             self.paudio_channel_3.duty_u16(0)
-        elif channel == "c0":
-            self.paudio_channel_4.duty_u16(0)
-        elif channel == "c1":
-            self.paudio_channel_5.duty_u16(0)
-            
 
     
     def _opcodes(self):
         return [0x90, 0x91, 0x92, 0x93, 0x80, 0x81, 0x82, 0x83, 0xf0, 0xe0]
     
     def _play_note_opcodes(self):
-        return [0x90, 0x91, 0x92, 0x93, 0x94, 0x95]
+        return [0x90, 0x91, 0x92, 0x93]
 
     def _stop_note_opcodes(self):
-        return [0x80, 0x81, 0x82, 0x83, 0x84, 0x85]
+        return [0x80, 0x81, 0x82, 0x83]
     
     def _end_song_opcodes(self):
         return [0xf0, 0xe0]
@@ -308,13 +319,9 @@ class SoundSubSystem():
                                 elif opcode == 0x91:
                                     self.play_note(tmp[0], "b0", 50)
                                 elif opcode == 0x92:
-                                    self.play_note(tmp[0], "c0", 50)
-                                elif opcode == 0x93:
                                     self.play_note(tmp[0], "a1", 50)
-                                elif opcode == 0x94:
+                                elif opcode == 0x93:
                                     self.play_note(tmp[0], "b1", 50)
-                                elif opcode == 0x95:
-                                    self.play_note(tmp[0], "c1", 50)
                                 
                                 if len(tmp) == 3:
                                     delay = ((tmp[1]*256)+(tmp[2]))
@@ -328,13 +335,9 @@ class SoundSubSystem():
                             elif opcode == 0x81:
                                 self.stop_channel("b0")
                             elif opcode == 0x82:
-                                self.stop_channel("c0")
-                            elif opcode == 0x83:
                                 self.stop_channel("a1")
-                            elif opcode == 0x84:
+                            elif opcode == 0x83:
                                 self.stop_channel("b1")
-                            elif opcode == 0x85:
-                                self.stop_channel("c1")
                                 
                             if len(tmp) >= 2:
                                 delay = ((tmp[0]*256)+(tmp[1]))
@@ -368,5 +371,3 @@ class SoundSubSystem():
         else:
             raise FileNotFoundError;
             exit(1)
-
-

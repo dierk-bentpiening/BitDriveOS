@@ -3966,6 +3966,10 @@ Q(Timer)
 
 Q(Timer)
 
+Q(Timer)
+
+Q(Timer)
+
 Q(TypeError)
 
 Q(TypeError)
@@ -4440,6 +4444,8 @@ Q(__name__)
 
 Q(__name__)
 
+Q(__name__)
+
 Q(__ne__)
 
 Q(__neg__)
@@ -4641,6 +4647,8 @@ Q(add)
 Q(add)
 
 Q(add)
+
+Q(add_ints)
 
 Q(add_program)
 
@@ -4875,6 +4883,10 @@ Q(clz)
 Q(cmath)
 
 Q(cmath)
+
+Q(cmemmon)
+
+Q(cmemmon)
 
 Q(cmp)
 
@@ -5343,6 +5355,8 @@ Q(index)
 Q(indices)
 
 Q(inf)
+
+Q(info)
 
 Q(init)
 
@@ -6413,6 +6427,8 @@ Q(ticks_diff)
 Q(ticks_ms)
 
 Q(ticks_us)
+
+Q(time)
 
 Q(time)
 

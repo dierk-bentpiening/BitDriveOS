@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.obj"
+  "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.obj.d"
   "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.c.obj"
   "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.c.obj.d"
   "CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/drivers/dht/dht.c.obj"

@@ -233,6 +233,30 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
 
+Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.obj: Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.obj
+.PHONY : Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.obj
+
+# target to build an object file
+Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.obj
+.PHONY : Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.obj
+
+Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.i: Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.i
+.PHONY : Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.i
+
+# target to preprocess a source file
+Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.i
+.PHONY : Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.i
+
+Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.s: Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.s
+.PHONY : Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.s
+
+# target to generate assembly for a file
+Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/firmware.dir/build.make CMakeFiles/firmware.dir/Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.s
+.PHONY : Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.c.s
+
 Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.obj: Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.c.obj
 .PHONY : Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.obj
 
@@ -9850,6 +9874,9 @@ help:
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
 	@echo "... bs2_default"
 	@echo "... firmware"
+	@echo "... Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.obj"
+	@echo "... Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.i"
+	@echo "... Users/dbpiening/git/BitDriveOS/bdosmod/memmon/memmon.s"
 	@echo "... Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.obj"
 	@echo "... Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.i"
 	@echo "... Users/dbpiening/git/BitDriveOS/drivers/bus/softspi.s"

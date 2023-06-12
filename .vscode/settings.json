@@ -16,5 +16,11 @@
             "command": "extension.execute",
             "priority": 4
         }
-    ]
+    ],
+    "files.associations": {
+        "runtime.h": "c",
+        "__locale": "c",
+        "ios": "c",
+        "mphal.h": "c"
+    }
 }
