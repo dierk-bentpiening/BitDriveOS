@@ -10,7 +10,7 @@
 #ifdef __cplusplus
 
 #include <string>
-
+#include <cstdint>
 typedef unsigned int uint;
 
 std::string disassemble(uint16_t inst, uint sideset_bits, bool sideset_opt);
